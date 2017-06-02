@@ -1,0 +1,30 @@
+/*------------------------------------------------*/
+/*	NAV											  */
+/*------------------------------------------------*/
+.nav-wrapper .brand-logo {
+	padding-left: 50px;
+}
+
+.nav-wrapper .right {
+	padding-right: 50px;
+}
+
+.nav-style{
+	background-color:#26c6da;
+}
+
+
+
+/*------------------------------------------------*/
+/*	FOOTER										  */
+/*------------------------------------------------*/
+body {
+/* 	background-image: url('/img/pink dust.png'); */
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+main {
+	flex: 1 0 auto;
+}

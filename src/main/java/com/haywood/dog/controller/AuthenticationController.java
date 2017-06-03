@@ -26,7 +26,7 @@ import com.haywood.dog.service.AuthenticationService;
 @Controller
 @RequestMapping("/auth")
 public class AuthenticationController {
-
+	
 	
 	private final static org.slf4j.Logger logger = LoggerFactory.getLogger(AuthenticationController.class);
 	

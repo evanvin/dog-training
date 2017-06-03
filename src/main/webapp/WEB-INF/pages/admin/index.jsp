@@ -1,4 +1,3 @@
-
 <%@ include file="/WEB-INF/pages/common/header.jsp"%>
 <%@ include file="/WEB-INF/pages/common/nav.jsp"%>
 
@@ -11,7 +10,7 @@
 		<div class="col s6 offset-s3">
 			<div class="card">
 				<div class="card-content">
-					<span class="card-title">Login</span>
+					<span class="card-title">Home</span>
 					<div class="row">
 						
 					</div>

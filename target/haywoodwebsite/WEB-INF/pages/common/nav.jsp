@@ -11,13 +11,13 @@
 				data-activates="mobile-demo" class="button-collapse"><i
 				class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
-				<li><a href="#">Tools</a></li>
-				<li><a href="badges.html">Components</a></li>
+				<li><a href="/customer/getcustomers">Customers</a></li>
+				<li><a href="badges.html">Calendar</a></li>
 			</ul>
 			<ul class="side-nav" id="mobile-demo">
 				<li><img height="50"/></li>
-				<li><a href="#">Tools</a></li>
-				<li><a href="badges.html">Components</a></li>
+				<li><a href="/customer/getcustomers">Customers</a></li>
+				<li><a href="badges.html">Calendar</a></li>
 			</ul>
 		</div>
 	</nav>

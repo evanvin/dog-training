@@ -70,8 +70,6 @@ public class CustomerController {
 	@ResponseBody
 	public Customer getCustomer(HttpServletRequest request, HttpServletResponse response, @RequestParam("id") String id) {
 		Customer c = customerService.findCustomer(id);
-		System.out.println(c.getFirstName());
-		
 		return c;
 	}
 	

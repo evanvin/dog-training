@@ -54,7 +54,7 @@
 			<div class="row">
 				<div class="row"><br/></div>
 				
-				<form:form action="/customer/save" modelAttribute="customerForm"
+				<form:form action="/customer/saveorupdate" modelAttribute="customerForm"
 					method="POST" class="col s12">
 					<form:hidden path="id"/>
 					<div class="row">
@@ -160,7 +160,7 @@
 							<input type="submit" id="saveOrUpdateButton"
 								class="right waves-effect waves-light btn btn-large cyan lighten-1"
 								value="Save Customer" />
-							<button type="button" id="updateCancelButton"
+							<button type="button" id="updateCancelButton" onclick="cancelUpdate();"
 								class="right hide waves-effect waves-light btn btn-large red lighten-1">Cancel</button>
 						</div>
 					</div>

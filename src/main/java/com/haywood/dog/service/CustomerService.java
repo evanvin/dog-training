@@ -48,13 +48,15 @@ public class CustomerService extends GenericService{
 		customer.setPetDesc(nullCheck(form.getPetDesc()));
 		customer.setNotes(nullCheck(form.getNotes()));
 		customer.setService(nullCheck(form.getService()));
+		if(form.getId() != null){
+			customer.setId(form.getId());
+		}
 		return customer;
 	}
 	
 	
 	public void saveOrUpdateCustomer(Customer customer){
 		logger.debug(">>> saveOrUpdateCustomer:ENTERED");
-		
 		mongoOperation.save(customer);
 	}
 
@@ -85,6 +87,7 @@ public class CustomerService extends GenericService{
 		form.setPetDesc(nullCheck(c.getPetDesc()));
 		form.setNotes(nullCheck(c.getNotes()));
 		form.setService(nullCheck(c.getService()));
+		form.setId(c.getId());
 		return form;
 	}
 

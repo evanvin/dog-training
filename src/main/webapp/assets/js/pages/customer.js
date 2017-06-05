@@ -2,7 +2,10 @@ var current_customer_id = "";
 var picker = "";
 
 $(document).ready(function(){
-	$('.modal').modal();
+	$('#settingsModal').modal();
+	$('#newCustomerModal').modal({
+		complete: function() { cancelUpdate(); } 
+	});
 	$('select').material_select();
 	
 	var date = new Date();
@@ -61,6 +64,7 @@ function editCustomer(){
 		success: function(data){
 			$('#updateCancelButton').removeClass('hide');
 			$('#saveOrUpdateButton').val('Update');
+			$('#id').val(current_customer_id);
 			populateForm(data);			
 			$('#settingsModal').modal('close');
 			$('#newCustomerModal').modal('open');

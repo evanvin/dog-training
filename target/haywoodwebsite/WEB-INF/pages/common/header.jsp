@@ -12,6 +12,8 @@
 	<link type="text/css" rel="stylesheet" href="/css/custom.css"  media="screen,projection"/>
 	<script type="text/javascript" src="/js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="/js/materialize.min.js"></script>
+    <script type="text/javascript" src="/js/dataTables.min.js"></script>
+    <script type="text/javascript" src="/js/materialize-dataTables-addon.js"></script>
     
     <title>HaywoodAdmin</title>
 </head>

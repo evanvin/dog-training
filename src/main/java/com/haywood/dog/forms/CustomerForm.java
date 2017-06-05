@@ -20,9 +20,11 @@ public class CustomerForm {
 	@NotEmpty(message="Phone number is required")
 	private String phone;
 	
-	//TODO: pet desc
+	private String petDesc;
 	
-	//TODO: pet birthday
+	private String petDOB;
+	
+	private String notes;
 	
 	private String addressOne;
 	
@@ -112,6 +114,40 @@ public class CustomerForm {
 
 	public void setState(String state) {
 		this.state = state;
+	}
+
+	public String getPetDesc() {
+		return petDesc;
+	}
+
+	public void setPetDesc(String petDesc) {
+		this.petDesc = petDesc;
+	}
+
+	public String getPetDOB() {
+		return petDOB;
+	}
+
+	public void setPetDOB(String petDOB) {
+		this.petDOB = petDOB;
+	}
+
+	public String getNotes() {
+		return notes;
+	}
+
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
+
+	@Override
+	public String toString() {
+		return "CustomerForm [firstName=" + firstName + ", lastName="
+				+ lastName + ", petName=" + petName + ", email=" + email
+				+ ", phone=" + phone + ", petDesc=" + petDesc + ", petDOB="
+				+ petDOB + ", notes=" + notes + ", addressOne=" + addressOne
+				+ ", addressTwo=" + addressTwo + ", city=" + city + ", zip="
+				+ zip + ", state=" + state + "]";
 	}
 	
 	

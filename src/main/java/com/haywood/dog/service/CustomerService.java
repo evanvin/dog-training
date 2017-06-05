@@ -43,6 +43,9 @@ public class CustomerService extends GenericService{
 		customer.setCity(nullCheck(form.getCity()));
 		customer.setZip(nullCheck(form.getZip()));
 		customer.setState(nullCheck(form.getState()));
+		customer.setPetDOB(nullCheck(form.getPetDOB()));
+		customer.setPetDesc(nullCheck(form.getPetDesc()));
+		customer.setNotes(nullCheck(form.getNotes()));
 		return customer;
 	}
 	

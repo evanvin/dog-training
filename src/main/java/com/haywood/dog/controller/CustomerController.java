@@ -19,7 +19,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.haywood.dog.config.HaywoodConstants;
 import com.haywood.dog.dao.Customer;
 import com.haywood.dog.forms.CustomerForm;
-import com.haywood.dog.forms.LoginForm;
 import com.haywood.dog.service.CustomerService;
 
 @Controller
@@ -48,7 +47,7 @@ public class CustomerController {
 	
 	@RequestMapping(value="/save", method = RequestMethod.POST)
 	public ModelAndView saveCustomer(HttpServletRequest request, HttpServletResponse response, @Valid @ModelAttribute("customerForm")CustomerForm customerForm, BindingResult result, Model model) {
-		ModelAndView mav = new ModelAndView(HaywoodConstants.VIEW_CUSTOMER);
+		ModelAndView mav = new ModelAndView(HaywoodConstants.REDIRECT_CUSTOMER);
 		customerService.saveCustomer(customerService.convertFormToCustomer(customerForm));
 		return mav;
 	}

@@ -17,6 +17,10 @@ public class Customer {
 	
 	String petName;
 	
+	String petDesc;
+	
+	String petDOB;
+	
 	String email;
 	
 	String phone;
@@ -34,6 +38,8 @@ public class Customer {
 	Calendar createdDate;
 	
 	Boolean isActive;
+	
+	String notes;
 	
 	public Customer(){
 		this.createdDate = Calendar.getInstance();
@@ -143,7 +149,31 @@ public class Customer {
 	public void setIsActive(Boolean isActive) {
 		this.isActive = isActive;
 	}
-	
+
+	public String getPetDesc() {
+		return petDesc;
+	}
+
+	public void setPetDesc(String petDesc) {
+		this.petDesc = petDesc;
+	}
+
+	public String getPetDOB() {
+		return petDOB;
+	}
+
+	public void setPetDOB(String petDOB) {
+		this.petDOB = petDOB;
+	}
+
+	public String getNotes() {
+		return notes;
+	}
+
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
+
 	
 	
 	

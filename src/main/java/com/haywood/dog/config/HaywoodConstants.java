@@ -4,6 +4,8 @@ public interface HaywoodConstants {
 
 	String VIEW_LOGIN = "auth/login";
 	String VIEW_HOME = "admin/index";
+	
 	String VIEW_CUSTOMER = "admin/customer"; 
+	String REDIRECT_CUSTOMER = "redirect:/customer/getcustomers";
 	
 }

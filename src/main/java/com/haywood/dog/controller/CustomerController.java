@@ -65,6 +65,13 @@ public class CustomerController {
 		customerService.deactivateCustomer(id);
 		return mav;
 	}	
+
+	@RequestMapping(value="/customergraduated", method = RequestMethod.GET)
+	public ModelAndView customerGraduated(HttpServletRequest request, HttpServletResponse response, @RequestParam("id") String id) {
+		ModelAndView mav = new ModelAndView(HaywoodConstants.REDIRECT_CUSTOMER);
+		customerService.graduateCustomer(id);
+		return mav;
+	}	
 	
 	@RequestMapping(value="/findcustomer", method = RequestMethod.GET)
 	@ResponseBody

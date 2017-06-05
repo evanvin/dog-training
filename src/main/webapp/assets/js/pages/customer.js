@@ -56,6 +56,10 @@ function cancelUpdate(){
 	location.href="/customer/getcustomers";
 }
 
+function customerGraduated(){
+	location.href="/customer/customergraduated?id=" + current_customer_id;
+}
+
 function editCustomer(){
 	request = $.ajax({
 		url : "/customer/findcustomer",

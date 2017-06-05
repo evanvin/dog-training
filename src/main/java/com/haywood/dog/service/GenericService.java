@@ -3,6 +3,7 @@ package com.haywood.dog.service;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class GenericService {
 
@@ -11,20 +12,19 @@ public class GenericService {
 		return str == null ? "" : str;
 	}
 	
-	public Calendar convertStringToCalendar(String date){
+	public Date convertStringToCalendar(String date){
 		SimpleDateFormat sdf = new SimpleDateFormat("MMM d, yyyy");
 		Calendar cal = Calendar.getInstance();
 		try {
-			cal.setTime(sdf.parse(date));
-			return cal;
+			return sdf.parse(date);
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
 	
-	public String convertCalendarToString(Calendar calendar){
+	public String convertCalendarToString(Date date){
 		SimpleDateFormat sdf = new SimpleDateFormat("MMM d, yyyy");
-		return sdf.format(calendar.getTime());
+		return sdf.format(date.getTime());
 	}
 }

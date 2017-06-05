@@ -1,5 +1,7 @@
 package com.haywood.dog.service;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import org.slf4j.LoggerFactory;
@@ -48,7 +50,10 @@ public class CustomerService extends GenericService{
 		customer.setPetDesc(nullCheck(form.getPetDesc()));
 		customer.setNotes(nullCheck(form.getNotes()));
 		customer.setService(nullCheck(form.getService()));
-		if(form.getId() != null){
+		if(form.getId() == null || form.getId().equals("")){
+			customer.setId(null);
+		}
+		else{
 			customer.setId(form.getId());
 		}
 		return customer;
@@ -89,6 +94,12 @@ public class CustomerService extends GenericService{
 		form.setService(nullCheck(c.getService()));
 		form.setId(c.getId());
 		return form;
+	}
+
+	public void graduateCustomer(String id) {
+		Query query = new Query(Criteria.where("id").is(id));
+		mongoOperation.updateFirst(query, Update.update("graduatedDate", new Date()), Customer.class);
+		mongoOperation.updateFirst(query, Update.update("graduated", true), Customer.class);
 	}
 
 }

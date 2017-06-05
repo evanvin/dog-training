@@ -1,6 +1,7 @@
 package com.haywood.dog.dao;
 
 import java.util.Calendar;
+import java.util.Date;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -35,7 +36,7 @@ public class Customer {
 	
 	String state;
 	
-	Calendar createdDate;
+	Date createdDate;
 	
 	Boolean isActive;
 	
@@ -43,8 +44,14 @@ public class Customer {
 	
 	String service;
 	
+	Date graduatedDate;
+	
+	Boolean graduated;
+	
 	public Customer(){
-		this.createdDate = Calendar.getInstance();
+		this.createdDate = new Date();
+		this.graduated = false;
+		this.graduatedDate = new Date();
 		this.isActive = true;
 	}
 
@@ -136,11 +143,11 @@ public class Customer {
 		this.state = state;
 	}
 
-	public Calendar getCreatedDate() {
+	public Date getCreatedDate() {
 		return createdDate;
 	}
 
-	public void setCreatedDate(Calendar createdDate) {
+	public void setCreatedDate(Date createdDate) {
 		this.createdDate = createdDate;
 	}
 
@@ -182,6 +189,22 @@ public class Customer {
 
 	public void setService(String service) {
 		this.service = service;
+	}
+
+	public Date getGraduatedDate() {
+		return graduatedDate;
+	}
+
+	public void setGraduatedDate(Date graduatedDate) {
+		this.graduatedDate = graduatedDate;
+	}
+
+	public Boolean getGraduated() {
+		return graduated;
+	}
+
+	public void setGraduated(Boolean graduated) {
+		this.graduated = graduated;
 	}
 
 		

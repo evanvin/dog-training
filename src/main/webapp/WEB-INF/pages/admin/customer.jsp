@@ -36,7 +36,7 @@
 						<c:forEach items="${customers}" var="customer">
 							<tr>
 								<td class="valign-wrapper"><i onclick="openSettings('${customer.id}');" class="clickable material-icons">settings</i>&nbsp;${customer.firstName}&nbsp;${customer.lastName}</td>
-								<td>${customer.petName}</td>
+								<td><c:if test="${customer.graduated}">${customer.petName}&nbsp;<i class="material-icons">school</i></c:if></td>
 								<td>${customer.petDesc}</td>
 								<td>${customer.petDOB}</td>
 								<td>${customer.phone}</td>
@@ -173,11 +173,11 @@
     <div class="modal-content center-align">
     	<div class="row">
     		<div class="col s4">
-    			<i onclick="" class="clickable large material-icons">clear</i>
+    			<i onclick="deactivateCustomer();" class="clickable large material-icons">clear</i>
     			<h4>Remove</h4>
     		</div>
     		<div class="col s4">
-    			<i onclick="" class="clickable large material-icons">school</i>
+    			<i onclick="customerGraduated();" class="clickable large material-icons">school</i>
     			<h4>Graduate</h4>
     		</div>
     		<div class="col s4">

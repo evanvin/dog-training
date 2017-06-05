@@ -4,6 +4,8 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class CustomerForm {
+	
+	private String id;
 
 	@NotEmpty(message="First name is required")
 	private String firstName;
@@ -35,6 +37,9 @@ public class CustomerForm {
 	private String zip;
 	
 	private String state;
+	
+	private String service;
+	
 
 	public String getFirstName() {
 		return firstName;
@@ -140,15 +145,23 @@ public class CustomerForm {
 		this.notes = notes;
 	}
 
-	@Override
-	public String toString() {
-		return "CustomerForm [firstName=" + firstName + ", lastName="
-				+ lastName + ", petName=" + petName + ", email=" + email
-				+ ", phone=" + phone + ", petDesc=" + petDesc + ", petDOB="
-				+ petDOB + ", notes=" + notes + ", addressOne=" + addressOne
-				+ ", addressTwo=" + addressTwo + ", city=" + city + ", zip="
-				+ zip + ", state=" + state + "]";
+	public String getService() {
+		return service;
 	}
+
+	public void setService(String service) {
+		this.service = service;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	
 	
 	
 	

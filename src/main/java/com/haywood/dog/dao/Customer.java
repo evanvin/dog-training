@@ -41,6 +41,8 @@ public class Customer {
 	
 	String notes;
 	
+	String service;
+	
 	public Customer(){
 		this.createdDate = Calendar.getInstance();
 		this.isActive = true;
@@ -174,8 +176,15 @@ public class Customer {
 		this.notes = notes;
 	}
 
-	
-	
+	public String getService() {
+		return service;
+	}
+
+	public void setService(String service) {
+		this.service = service;
+	}
+
+		
 	
 	
 }

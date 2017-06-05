@@ -1,27 +1,13 @@
 package com.haywood.dog.controller;
 
-import java.util.List;
-import java.util.Map;
-
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.data.mongodb.core.MongoOperations;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.haywood.dog.config.HaywoodConstants;
-import com.haywood.dog.config.SpringMongoConfig;
-import com.haywood.dog.dao.User;
 import com.haywood.dog.forms.LoginForm;
 import com.haywood.dog.service.AuthenticationService;
 

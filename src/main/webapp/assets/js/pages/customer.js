@@ -48,6 +48,19 @@ function openSettings(customer_id){
 	current_customer_id = customer_id;
 }
 
+function viewCustomer(){
+	request = $.ajax({
+		url : "/customer/findcustomer",
+		data : {"id" : current_customer_id},
+		type : "get",
+		success: function(data){
+			populateDetails(data);			
+			$('#settingsModal').modal('close');
+			$('#customerDetailsModal').modal('open');
+		}
+	});
+}
+
 function deactivateCustomer(){
 	location.href="/customer/deactivatecustomer?id=" + current_customer_id;
 }

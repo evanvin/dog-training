@@ -7,6 +7,7 @@
 
 <html>
 <head>
+	<link rel="icon" href="/img/favicon.ico" >
 	<link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
 	<link type="text/css" rel="stylesheet" href="/css/materialize.icons.css"  media="screen,projection"/>
 	<link type="text/css" rel="stylesheet" href="/css/custom.css"  media="screen,projection"/>

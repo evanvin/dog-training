@@ -14,7 +14,6 @@ public class GenericService {
 	
 	public Date convertStringToCalendar(String date){
 		SimpleDateFormat sdf = new SimpleDateFormat("MMM d, yyyy");
-		Calendar cal = Calendar.getInstance();
 		try {
 			return sdf.parse(date);
 		} catch (ParseException e) {

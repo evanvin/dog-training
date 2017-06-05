@@ -1,23 +1,19 @@
 <header>
-	<ul id="dropdown1" class="dropdown-content">
-		<li><a href="#!">one</a></li>
-		<li><a href="#!">two</a></li>
-		<li class="divider"></li>
-		<li><a href="#!">three</a></li>
-	</ul>
 	<nav class="nav-style">
 		<div class="nav-wrapper">
-			<a href="#!" class="brand-logo">Haywood Admin</a> <a href="#"
+			<a href="/home" class="brand-logo">Haywood Admin</a> <a href="#"
 				data-activates="mobile-demo" class="button-collapse"><i
 				class="material-icons">menu</i></a>
 			<ul class="right hide-on-med-and-down">
-				<li><a href="/customer/getcustomers">Customers</a></li>
-				<li><a href="badges.html">Calendar</a></li>
+				<li><a href="/customer/getcustomers"><i class="material-icons left">people</i>Customers</a></li>
+				<li><a href="/calendar/getcalendar"><i class="material-icons left">access_time</i>Calendar</a></li>
+				<li><a href="/stats/loadstats"><i class="material-icons left">timeline</i>Statistics</a></li>
 			</ul>
 			<ul class="side-nav" id="mobile-demo">
 				<li><img height="50"/></li>
-				<li><a href="/customer/getcustomers">Customers</a></li>
-				<li><a href="badges.html">Calendar</a></li>
+				<li><a href="/customer/getcustomers"><i class="material-icons left">people</i>Customers</a></li>
+				<li><a href="/calendar/getcalendar"><i class="material-icons left">access_time</i>Calendar</a></li>
+				<li><a href="/stats/loadstats"><i class="material-icons left">timeline</i>Statistics</a></li>
 			</ul>
 		</div>
 	</nav>

@@ -68,5 +68,12 @@ public class BaseController {
 		
 		return new ModelAndView(HaywoodConstants.VIEW_LOGIN, "loginForm", new LoginForm());
 	}
+	
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public ModelAndView home() {
+		//TODO: do security
+		return new ModelAndView(HaywoodConstants.VIEW_HOME);
+	}
+	
 
 }

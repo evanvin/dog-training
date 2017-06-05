@@ -3,9 +3,7 @@
 
 <main>
 <div class="container">
-	<div class="row">
-		
-	</div>
+	<div class="row"></div>
 
 	<div class="row">
 		<div id="admin" class="col s12">
@@ -35,8 +33,12 @@
 					<tbody>
 						<c:forEach items="${customers}" var="customer">
 							<tr>
-								<td class="valign-wrapper"><i onclick="openSettings('${customer.id}');" class="clickable material-icons">settings</i>&nbsp;${customer.firstName}&nbsp;${customer.lastName}</td>
-								<td><c:if test="${customer.graduated}">${customer.petName}&nbsp;<i class="material-icons">school</i></c:if></td>
+								<td class="valign-wrapper"><i
+									onclick="openSettings('${customer.id}');"
+									class="clickable material-icons">settings</i>&nbsp;${customer.firstName}&nbsp;${customer.lastName}</td>
+								<td><c:if test="${customer.graduated}">${customer.petName}&nbsp;<i
+											class="material-icons">school</i>
+									</c:if></td>
 								<td>${customer.petDesc}</td>
 								<td>${customer.petDOB}</td>
 								<td>${customer.phone}</td>
@@ -52,11 +54,13 @@
 		<div class="modal-content">
 			<h4>New Customer</h4>
 			<div class="row">
-				<div class="row"><br/></div>
-				
-				<form:form action="/customer/saveorupdate" modelAttribute="customerForm"
-					method="POST" class="col s12">
-					<form:hidden path="id"/>
+				<div class="row">
+					<br />
+				</div>
+
+				<form:form action="/customer/saveorupdate"
+					modelAttribute="customerForm" method="POST" class="col s12">
+					<form:hidden path="id" />
 					<div class="row">
 						<div class="col s12">
 							<h5>Owner Information</h5>
@@ -109,9 +113,11 @@
 							<form:label path="zip">Zip Code</form:label>
 						</div>
 					</div>
-					
-					<div class="row"><br/></div>
-					
+
+					<div class="row">
+						<br />
+					</div>
+
 					<div class="row">
 						<div class="col s12">
 							<h5>Pet Information</h5>
@@ -124,8 +130,8 @@
 							<form:label path="petName">Pet Name</form:label>
 						</div>
 						<div class="input-field col s4">
-							<i class="material-icons prefix">date_range</i>
-							<input type="date" id="petDOBinput" class="datepicker" /> <label
+							<i class="material-icons prefix">date_range</i> <input
+								type="date" id="petDOBinput" class="datepicker" /> <label
 								for="petDOBinput">Pet Date of Birth</:label> <form:hidden
 									path="petDOB" />
 						</div>
@@ -133,7 +139,7 @@
 							<i class="material-icons prefix">shopping_cart</i>
 							<form:select path="service">
 								<form:option value="" disabled="true" selected="selected">Choose a Service</form:option>
-							    <form:options items="${services}" />
+								<form:options items="${services}" />
 							</form:select>
 							<form:label path="service">Service</form:label>
 						</div>
@@ -145,9 +151,11 @@
 							<form:label path="petDesc">Pet Description</form:label>
 						</div>
 					</div>
-					
-					<div class="row"><br/></div>
-					
+
+					<div class="row">
+						<br />
+					</div>
+
 					<div class="row">
 						<div class="input-field col s12">
 							<i class="material-icons prefix">note_add</i>
@@ -160,7 +168,8 @@
 							<input type="submit" id="saveOrUpdateButton"
 								class="right waves-effect waves-light btn btn-large cyan lighten-1"
 								value="Save Customer" />
-							<button type="button" id="updateCancelButton" onclick="cancelUpdate();"
+							<button type="button" id="updateCancelButton"
+								onclick="cancelUpdate();"
 								class="right hide waves-effect waves-light btn btn-large red lighten-1">Cancel</button>
 						</div>
 					</div>
@@ -168,25 +177,42 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div id="settingsModal" class="modal bottom-sheet">
-    <div class="modal-content center-align">
-    	<div class="row">
-    		<div class="col s4">
-    			<i onclick="deactivateCustomer();" class="clickable large material-icons">clear</i>
-    			<h4>Remove</h4>
-    		</div>
-    		<div class="col s4">
-    			<i onclick="customerGraduated();" class="clickable large material-icons">school</i>
-    			<h4>Graduate</h4>
-    		</div>
-    		<div class="col s4">
-    			<i onclick="editCustomer();" class="clickable large material-icons">create</i>
-    			<h4>Edit</h4>
-    		</div>
-    	</div>
-    </div>
-  </div>
+		<div class="modal-content center-align">
+			<div class="row">
+				<div class="col s3">
+					<i onclick="viewCustomer();" class="clickable large material-icons">info_outline</i>
+					<h4>View</h4>
+				</div>
+				<div class="col s3">
+					<i onclick="editCustomer();" class="clickable large material-icons">create</i>
+					<h4>Edit</h4>
+				</div>
+				<div class="col s3">
+					<i onclick="customerGraduated();"
+						class="clickable large material-icons">school</i>
+					<h4>Graduate</h4>
+				</div>
+				<div class="col s3">
+					<i onclick="deactivateCustomer();"
+						class="clickable large material-icons">clear</i>
+					<h4>Remove</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="customerDetailsModal" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<div class="row">
+								
+			</div>
+		</div>
+		<div class="modal-footer">
+	      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Close</a>
+	    </div>
+	</div>
 
 
 </div>

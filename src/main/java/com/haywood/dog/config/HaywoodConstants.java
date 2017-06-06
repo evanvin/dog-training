@@ -6,6 +6,7 @@ public interface HaywoodConstants {
 	String VIEW_HOME = "admin/index";
 	String VIEW_CUSTOMER = "admin/customer";
 	String VIEW_CALENDAR = "admin/calendar";
+	String VIEW_STATISTICS = "admin/statistics";
 	
 	
 	String REDIRECT_CUSTOMER = "redirect:/customer/getcustomers";

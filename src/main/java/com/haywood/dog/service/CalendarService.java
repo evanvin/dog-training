@@ -34,7 +34,7 @@ public class CalendarService extends GenericService{
 	public List<TrainingSession> getAllIncompleteTrainingSessions(){
 		Criteria c1 = Criteria.where("isActive").is(true);
 		Criteria c2 = Criteria.where("markedComplete").is(false);
-		Query query = new Query(new Criteria().andOperator(c1,c2)).with(new Sort(Sort.Direction.DESC, "sessionTime"));
+		Query query = new Query(new Criteria().andOperator(c1,c2)).with(new Sort(Sort.Direction.ASC, "sessionTime"));
 		return mongoOperation.find(query, TrainingSession.class);
 	}
 	

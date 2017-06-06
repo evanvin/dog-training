@@ -2,4 +2,5 @@
 [ ] Add session security
 [ ] Session timeouts
 [ ] Add form validation toasts
-[ ]
+[ ] Add customer attendence count
+[ ] Fix issue with training sessions list of customer ids not keeping a link with one another

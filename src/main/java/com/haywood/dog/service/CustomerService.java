@@ -1,6 +1,5 @@
 package com.haywood.dog.service;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -35,7 +34,15 @@ public class CustomerService extends GenericService{
 	}
 	
 	public Customer convertFormToCustomer(CustomerForm form){
-		Customer customer = new Customer();		
+		Customer customer = null;
+		
+		if(form.getId() != null && !form.getId().equals("")){
+			customer = findCustomer(form.getId());
+		}
+		else{
+			customer = new Customer();	
+			customer.setId(null);
+		}
 		customer.setFirstName(form.getFirstName());
 		customer.setLastName(form.getLastName());
 		customer.setPetName(form.getPetName());
@@ -50,18 +57,12 @@ public class CustomerService extends GenericService{
 		customer.setPetDesc(nullCheck(form.getPetDesc()));
 		customer.setNotes(nullCheck(form.getNotes()));
 		customer.setService(nullCheck(form.getService()));
-		if(form.getId() == null || form.getId().equals("")){
-			customer.setId(null);
-		}
-		else{
-			customer.setId(form.getId());
-		}
 		return customer;
 	}
 	
 	
 	public void saveOrUpdateCustomer(Customer customer){
-		logger.debug(">>> saveOrUpdateCustomer:ENTERED");
+		logger.debug(">>> saveOrUpdateCustomer:ENTERED Customer has id = " + customer.getId());
 		mongoOperation.save(customer);
 	}
 
@@ -100,6 +101,13 @@ public class CustomerService extends GenericService{
 		Query query = new Query(Criteria.where("id").is(id));
 		mongoOperation.updateFirst(query, Update.update("graduatedDate", new Date()), Customer.class);
 		mongoOperation.updateFirst(query, Update.update("graduated", true), Customer.class);
+	}
+
+	public List<Customer> getAllActiveNonGraduatedCustomers() {
+		Criteria c1 = Criteria.where("isActive").is(true);
+		Criteria c2 = Criteria.where("graduated").is(false);
+		Query query = new Query(new Criteria().andOperator(c1,c2));
+		return mongoOperation.find(query, Customer.class);
 	}
 
 }

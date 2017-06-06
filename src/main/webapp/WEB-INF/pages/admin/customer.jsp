@@ -28,6 +28,7 @@
 							<th>Pet Description</th>
 							<th>Pet DOB</th>
 							<th>Owners Phone #</th>
+							<th>Service</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -36,12 +37,13 @@
 								<td class="valign-wrapper"><i
 									onclick="openSettings('${customer.id}');"
 									class="clickable material-icons">settings</i>&nbsp;${customer.firstName}&nbsp;${customer.lastName}</td>
-								<td><c:if test="${customer.graduated}">${customer.petName}&nbsp;<i
+								<td>${customer.petName}&nbsp;<c:if test="${customer.graduated}"><i
 											class="material-icons">school</i>
 									</c:if></td>
 								<td>${customer.petDesc}</td>
 								<td>${customer.petDOB}</td>
 								<td>${customer.phone}</td>
+								<td>${services[customer.service]}</td>
 							</tr>
 						</c:forEach>
 					</tbody>
@@ -132,7 +134,7 @@
 						<div class="input-field col s4">
 							<i class="material-icons prefix">date_range</i> <input
 								type="date" id="petDOBinput" class="datepicker" /> <label
-								for="petDOBinput">Pet Date of Birth</:label> <form:hidden
+								for="petDOBinput">Pet Date of Birth</label> <form:hidden
 									path="petDOB" />
 						</div>
 						<div class="input-field col s4">
@@ -204,9 +206,12 @@
 	</div>
 
 	<div id="customerDetailsModal" class="modal modal-fixed-footer">
+		<input type="hidden" value="${services}" id="services"/>
 		<div class="modal-content">
 			<div class="row">
-								
+				<div class="col s12">
+					<ul class="collection" id="detailsPane"></ul>
+				</div>		
 			</div>
 		</div>
 		<div class="modal-footer">

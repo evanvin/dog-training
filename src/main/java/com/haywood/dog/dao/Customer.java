@@ -1,6 +1,5 @@
 package com.haywood.dog.dao;
 
-import java.util.Calendar;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;

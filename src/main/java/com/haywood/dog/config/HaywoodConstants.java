@@ -12,4 +12,8 @@ public interface HaywoodConstants {
 	String REDIRECT_CUSTOMER = "redirect:/customer/getcustomers";
 	String REDIRECT_CALENDAR = "redirect:/calendar/getcalendar";
 	
+	
+	String CONTENT_TYPE_PDF = "application/pdf";
+	
+	
 }

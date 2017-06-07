@@ -62,34 +62,6 @@ function viewCustomer(){
 	});
 }
 
-function deactivateCustomer(){
-	location.href="/customer/deactivatecustomer?id=" + current_customer_id;
-}
-
-function cancelUpdate(){
-	location.href="/customer/getcustomers";
-}
-
-function customerGraduated(){
-	location.href="/customer/customergraduated?id=" + current_customer_id;
-}
-
-function editCustomer(){
-	request = $.ajax({
-		url : "/customer/findcustomer",
-		data : {"id" : current_customer_id},
-		type : "get",
-		success: function(data){
-			$('#updateCancelButton').removeClass('hide');
-			$('#saveOrUpdateButton').val('Update');
-			$('#id').val(current_customer_id);
-			populateForm(data);			
-			$('#settingsModal').modal('close');
-			$('#newCustomerModal').modal('open');
-		}
-	});
-}
-
 function populateForm(customer){
 	for (var key in customer) {
 		$('#' + key).val(customer[key]);
@@ -120,9 +92,42 @@ function populateDetails(c){
       '<div class="col s5 grey-text darken-1"><i class="mdi-action-wallet-travel"></i> ' + key + '</div>'+
       '<div class="col s7 grey-text text-darken-4 right-align">' + arr[key] + '</div>'+
 	 '</div></li>');
-	}
-	
-	
-	
+	}	
 }
 
+
+
+/*---------------------------
+----BOTTOM MODAL ACTIONS-----
+---------------------------*/
+function deactivateCustomer(){
+	location.href="/customer/deactivatecustomer?id=" + current_customer_id;
+}
+
+function cancelUpdate(){
+	location.href="/customer/getcustomers";
+}
+
+function customerGraduated(){
+	location.href="/customer/customergraduated?id=" + current_customer_id;
+}
+
+function downloadBarcode(customer_id){
+	location.href="/customer/downloadbarcode?id=" + current_customer_id;
+}
+
+function editCustomer(){
+	request = $.ajax({
+		url : "/customer/findcustomer",
+		data : {"id" : current_customer_id},
+		type : "get",
+		success: function(data){
+			$('#updateCancelButton').removeClass('hide');
+			$('#saveOrUpdateButton').val('Update');
+			$('#id').val(current_customer_id);
+			populateForm(data);			
+			$('#settingsModal').modal('close');
+			$('#newCustomerModal').modal('open');
+		}
+	});
+}

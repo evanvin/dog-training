@@ -1,5 +1,8 @@
 package com.haywood.dog.controller;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +26,10 @@ import com.haywood.dog.dao.Customer;
 import com.haywood.dog.forms.CustomerForm;
 import com.haywood.dog.service.CustomerService;
 import com.haywood.dog.service.LookupService;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 
 @Controller
 @RequestMapping("/customer")
@@ -78,6 +85,12 @@ public class CustomerController {
 	public Customer getCustomer(HttpServletRequest request, HttpServletResponse response, @RequestParam("id") String id) {
 		Customer c = customerService.findCustomer(id);
 		return c;
+	}
+	
+	@RequestMapping(value="/downloadbarcode", method = RequestMethod.GET)
+	@ResponseBody
+	public void downloadBarcode(HttpServletRequest request, HttpServletResponse response, @RequestParam("id") String id) {
+		customerService.downloadBarcode(response, id);		
 	}
 	
 	

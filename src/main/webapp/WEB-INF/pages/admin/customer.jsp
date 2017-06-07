@@ -184,23 +184,30 @@
 		<div class="modal-content center-align">
 			<div class="row">
 				<div class="col s3">
-					<i onclick="viewCustomer();" class="clickable large material-icons">info_outline</i>
+					<i onclick="viewCustomer();" class="clickable medium material-icons">info_outline</i>
 					<h4>View</h4>
 				</div>
 				<div class="col s3">
-					<i onclick="editCustomer();" class="clickable large material-icons">create</i>
+					<i onclick="editCustomer();" class="clickable medium material-icons">create</i>
 					<h4>Edit</h4>
 				</div>
 				<div class="col s3">
 					<i onclick="customerGraduated();"
-						class="clickable large material-icons">school</i>
+						class="clickable medium material-icons">school</i>
 					<h4>Graduate</h4>
 				</div>
 				<div class="col s3">
 					<i onclick="deactivateCustomer();"
-						class="clickable large material-icons">clear</i>
+						class="clickable medium material-icons">clear</i>
 					<h4>Remove</h4>
 				</div>
+			</div>
+			<div class="row">
+				<div class="col s3">
+					<i onclick="downloadBarcode();" class="clickable medium material-icons">recent_actors</i>
+					<h4>Barcode</h4>
+				</div>
+				
 			</div>
 		</div>
 	</div>
